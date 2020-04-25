@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		15A658532453581C0044F63C /* Giphy_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A658522453581C0044F63C /* Giphy_iOSUITests.swift */; };
+		15A6585D2454562D0044F63C /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6585C2454562D0044F63C /* XCTestCase.swift */; };
+		15A6585F2454567C0044F63C /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6585E2454567C0044F63C /* XCUIElement.swift */; };
+		15A65862245459B60044F63C /* WaitLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A65861245459B60044F63C /* WaitLimit.swift */; };
 		311112018B3C819A3A17D0AC /* Pods_Giphy_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69954CB90CC1E8713B73DA6 /* Pods_Giphy_iOS.framework */; };
+		7D56C4B4AD6574E7A0E2DB94 /* Pods_Giphy_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD104BAAC4FE97C87C639AC7 /* Pods_Giphy_iOSUITests.framework */; };
 		B42060B8232519ED0038C411 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42060B7232519ED0038C411 /* Error.swift */; };
 		B42060BA23251D950038C411 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42060B923251D950038C411 /* ApiClient.swift */; };
 		B42060BC23251F9E0038C411 /* GiphyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42060BB23251F9E0038C411 /* GiphyService.swift */; };
@@ -47,7 +51,13 @@
 		15A658502453581C0044F63C /* Giphy-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Giphy-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A658522453581C0044F63C /* Giphy_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giphy_iOSUITests.swift; sourceTree = "<group>"; };
 		15A658542453581C0044F63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15A6585A245359550044F63C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		15A6585C2454562D0044F63C /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		15A6585E2454567C0044F63C /* XCUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
+		15A65861245459B60044F63C /* WaitLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitLimit.swift; sourceTree = "<group>"; };
+		3947BDD2AA2F96420602692D /* Pods-Giphy-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Giphy-iOSUITests/Pods-Giphy-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0D5A66D1ABE55A4D7AE1D0 /* Pods-Giphy-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy-iOS.release.xcconfig"; path = "Target Support Files/Pods-Giphy-iOS/Pods-Giphy-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		B00F1A3DD31B8AC02161D81B /* Pods-Giphy-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Giphy-iOSUITests/Pods-Giphy-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B42060B7232519ED0038C411 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		B42060B923251D950038C411 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		B42060BB23251F9E0038C411 /* GiphyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyService.swift; sourceTree = "<group>"; };
@@ -72,6 +82,7 @@
 		B4B4270423205FF200E764D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4E5046C232983EB009F909E /* FLAnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLAnimatedImageView.swift; sourceTree = "<group>"; };
 		E69954CB90CC1E8713B73DA6 /* Pods_Giphy_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Giphy_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD104BAAC4FE97C87C639AC7 /* Pods_Giphy_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Giphy_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D56C4B4AD6574E7A0E2DB94 /* Pods_Giphy_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,16 +108,37 @@
 		15A658512453581C0044F63C /* Giphy-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
+				15A65860245459980044F63C /* Utils */,
+				15A6585B245453480044F63C /* Extensions */,
 				15A658522453581C0044F63C /* Giphy_iOSUITests.swift */,
 				15A658542453581C0044F63C /* Info.plist */,
+				15A6585A245359550044F63C /* README.md */,
 			);
 			path = "Giphy-iOSUITests";
+			sourceTree = "<group>";
+		};
+		15A6585B245453480044F63C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15A6585C2454562D0044F63C /* XCTestCase.swift */,
+				15A6585E2454567C0044F63C /* XCUIElement.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		15A65860245459980044F63C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15A65861245459B60044F63C /* WaitLimit.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		1CFE0B42F27719267AC39C3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E69954CB90CC1E8713B73DA6 /* Pods_Giphy_iOS.framework */,
+				FD104BAAC4FE97C87C639AC7 /* Pods_Giphy_iOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +148,8 @@
 			children = (
 				083E62911C81009094781259 /* Pods-Giphy-iOS.debug.xcconfig */,
 				4F0D5A66D1ABE55A4D7AE1D0 /* Pods-Giphy-iOS.release.xcconfig */,
+				3947BDD2AA2F96420602692D /* Pods-Giphy-iOSUITests.debug.xcconfig */,
+				B00F1A3DD31B8AC02161D81B /* Pods-Giphy-iOSUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -263,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15A658592453581C0044F63C /* Build configuration list for PBXNativeTarget "Giphy-iOSUITests" */;
 			buildPhases = (
+				6DFBF56411C30D4F8A4C1F17 /* [CP] Check Pods Manifest.lock */,
 				15A6584C2453581C0044F63C /* Sources */,
 				15A6584D2453581C0044F63C /* Frameworks */,
 				15A6584E2453581C0044F63C /* Resources */,
+				84E6BB4637DB9662668688B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,6 +408,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Giphy-iOS/Pods-Giphy-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6DFBF56411C30D4F8A4C1F17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Giphy-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		782FED076FAEB0E86F79A5DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,6 +452,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		84E6BB4637DB9662668688B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Giphy-iOSUITests/Pods-Giphy-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Giphy-iOSUITests/Pods-Giphy-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Giphy-iOSUITests/Pods-Giphy-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -400,6 +476,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A6585D2454562D0044F63C /* XCTestCase.swift in Sources */,
+				15A6585F2454567C0044F63C /* XCUIElement.swift in Sources */,
+				15A65862245459B60044F63C /* WaitLimit.swift in Sources */,
 				15A658532453581C0044F63C /* Giphy_iOSUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +533,7 @@
 /* Begin XCBuildConfiguration section */
 		15A658572453581C0044F63C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3947BDD2AA2F96420602692D /* Pods-Giphy-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Giphy-iOSUITests/Info.plist";
@@ -473,6 +553,7 @@
 		};
 		15A658582453581C0044F63C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B00F1A3DD31B8AC02161D81B /* Pods-Giphy-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Giphy-iOSUITests/Info.plist";

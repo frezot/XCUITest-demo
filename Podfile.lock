@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
   - FLAnimatedImage (1.0.12)
+  - Nimble (8.0.6)
   - Nuke (8.0.1)
   - Nuke-FLAnimatedImage-Plugin (6.2):
     - FLAnimatedImage (~> 1.0)
@@ -9,25 +10,36 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Nimble (from `https://github.com/Quick/Nimble.git`)
   - Nuke
   - Nuke-FLAnimatedImage-Plugin
   - SnapKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - FLAnimatedImage
     - Nuke
     - Nuke-FLAnimatedImage-Plugin
     - SnapKit
 
+EXTERNAL SOURCES:
+  Nimble:
+    :git: https://github.com/Quick/Nimble.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 7c9ad74efc3803f7ec5e9a2bcb735e0cd3041d98
+    :git: https://github.com/Quick/Nimble.git
+
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Nimble: b8d72943acc630d90b89fbc9f569945c91e3d333
   Nuke: e6a65472f59c1bfe779cb495760951f0121ef7c0
   Nuke-FLAnimatedImage-Plugin: c6e8f6cffd57659953a149ff1682370b9040d09d
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: c6e2aacbf3973b86e15172bd81fc57e1d1f2eb86
+PODFILE CHECKSUM: 288a87c4446efc568ae74bb0b32a0d99a9cd2e16
 
 COCOAPODS: 1.8.4

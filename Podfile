@@ -10,3 +10,9 @@ target 'Giphy-iOS' do
   pod 'Nuke'
   pod 'Nuke-FLAnimatedImage-Plugin'
 end
+
+target 'Giphy-iOSUITests' do
+  use_frameworks!
+  
+  pod 'Nimble',                     :git => 'https://github.com/Quick/Nimble.git'
+end

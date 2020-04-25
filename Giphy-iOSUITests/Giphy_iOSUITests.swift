@@ -1,10 +1,12 @@
 import XCTest
+import Nimble
 
 class Giphy_iOSUITests: XCTestCase {
 
+    let app = XCUIApplication()
+
     override func setUp() {
         continueAfterFailure = false
-        let app = XCUIApplication()
         app.launch()
     }
 
@@ -14,7 +16,8 @@ class Giphy_iOSUITests: XCTestCase {
 
     func testExample() {
         //TODO: implement
-        sleep(1)
+        sleep(5)
+        print(app.debugDescription)
     }
 
 }
