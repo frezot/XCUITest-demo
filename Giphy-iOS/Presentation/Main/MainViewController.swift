@@ -44,6 +44,8 @@ final class MainViewController: UIViewController {
         setupLayout()
         setupTableView()
         setupViews()
+
+        setTestability()
     }
     
     private func setupViews() {
@@ -131,7 +133,8 @@ final class MainViewController: UIViewController {
         }
         
         cell.configureWith(cellModel: output.cellModels()[indexPath.row])
-        
+        cell.accessibilityIdentifier = "row\(indexPath.row)"
+
         return cell
     }
 }
@@ -192,4 +195,23 @@ extension MainViewController: MainViewInput {
     func scrollToTop() {
         tableView.setContentOffset(.zero, animated: true)
     }
+}
+
+extension MainViewController {
+
+    private func setTestability() {
+        titleLabel.accessibilityIdentifier = "screenHeader"
+        tableView.accessibilityIdentifier = "gifTableView"
+
+        noResultsView.accessibilityIdentifier = "noResultsView"
+        noResultsView.button.accessibilityIdentifier = "noResultsViewButton"
+        noResultsView.titleLabel.accessibilityIdentifier = "noResultsViewTitle"
+
+        errorView.accessibilityIdentifier = "errorView"
+        errorView.titleLabel.accessibilityIdentifier = "errorViewTitle"
+        errorView.button.accessibilityIdentifier = "errorViewButton"
+
+        searchBar.accessibilityIdentifier = "searchBar"
+    }
+
 }

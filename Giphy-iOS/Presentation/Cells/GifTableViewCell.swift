@@ -105,6 +105,8 @@ final class GifTableViewCell: CommonInitTableViewCell {
             into: gifImageView,
             completion: { [weak self] _ in
                 self?.gifActivityIndicator.stopAnimating()
+                self?.gifImageView.accessibilityIdentifier = cellModel.gifUrl.relativePath.components(separatedBy: "/")[2]
+                // example: /media/3oEduS7uQHMcdiUxA4/giphy.gif → 3oEduS7uQHMcdiUxA4
             }
         )
     }
@@ -112,10 +114,11 @@ final class GifTableViewCell: CommonInitTableViewCell {
     private func configureAvatarWith(cellModel: GifCellModel) {
         avatarActivityIndicator.startAnimating()
         userNameLabel.text = cellModel.userName?.isEmpty ?? true ? "Anon" : cellModel.userName
-        
+
         guard let avatarUrl = cellModel.userAvatarUrl else {
             avatarImageView.image =  #imageLiteral(resourceName: "avatar_placeholder")
             avatarActivityIndicator.stopAnimating()
+            self.avatarImageView.accessibilityIdentifier = "noAvatar"
             return
         }
         
@@ -125,7 +128,10 @@ final class GifTableViewCell: CommonInitTableViewCell {
             into: avatarImageView,
             completion: { [weak self] _ in
                 self?.avatarActivityIndicator.stopAnimating()
+                self?.avatarImageView.accessibilityIdentifier = "\(cellModel.userAvatarUrl?.relativePath.components(separatedBy: "/")[3] ?? "")"
+                // example: /avatars/warnerarchive/c8zg2LS9jiEj.gif → c8zg2LS9jiEj.gif
             }
         )
+
     }
 }

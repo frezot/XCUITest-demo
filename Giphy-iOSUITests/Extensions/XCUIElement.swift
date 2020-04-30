@@ -35,7 +35,15 @@ extension XCUIElement {
         return self.isVisibleOn(app: XCUIApplication())
     }
 
-    public func isVisibleOn(app: XCUIApplication) -> Bool {
+    /// Частичная видимость подразумевает что наш элемент имеет пересечение с видимой областью
+    public var partialVisible: Bool {
+        return self.exists
+            && XCUIApplication().windows.element(boundBy: 0).frame.intersects(self.frame)
+            && false == self.frame.isEmpty
+    }
+
+
+    private func isVisibleOn(app: XCUIApplication) -> Bool {
         if self.exists {
             let isObservable = self.exists
                 && app.windows.element(boundBy: 0).frame.contains(self.frame)
@@ -59,13 +67,25 @@ extension XCUIElement {
     }
 
     @discardableResult
-    internal func waitForVisible(timeLimit: TimeInterval = WaitLimit.short) -> Bool {
+    internal func waitForVisible(_ timeLimit: TimeInterval = WaitLimit.short) -> Bool {
         return waitFor(condition: "visible == true", timeLimit)
     }
 
     @discardableResult
-    internal func waitForHide(timeLimit: TimeInterval = WaitLimit.short) -> Bool {
+    internal func waitForHide(_ timeLimit: TimeInterval = WaitLimit.medium) -> Bool {
         return waitFor(condition: "visible == false", timeLimit)
     }
+
+    @discardableResult
+    internal func waitForStopProgress(_ timeLimit: TimeInterval = WaitLimit.medium) -> Bool {
+        guard self.elementType == ElementType.activityIndicator else {
+            fatalError("Метод неприменим для \(self.elementType)")
+        }
+        // не очень понимаю изза чего некоторые индикаторы загрузки вместо исчезновения переходят в состояние 'Progress halted'
+        // трафик слушал, обрывов по вине сервера не замечал, сам клиент иногда прекращает соединение
+        // пока воткнул костыль, но нужно консультироваться с разработкой
+        return waitFor(condition: "exists == false OR (exists == true AND label != \"In progress\")", timeLimit)
+    }
+
 
 }

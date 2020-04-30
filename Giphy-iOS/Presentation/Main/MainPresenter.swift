@@ -21,7 +21,7 @@ final class MainPresenter {
     }
     
     private func loadTrends() {
-        guard !isLoading else {
+        guard false == isLoading else {
             return
         }
         
@@ -119,18 +119,18 @@ extension MainPresenter: MainViewOutput {
     }
     
     func didSearch(text: String) {
-        guard !isLoading else {
+        guard false == isLoading else {
             return
         }
         
-        if !didSearch {
+        if false == didSearch {
             offset = 0
         }
         
         didSearch = true
         isLoading = true
         
-        guard !text.isEmpty else {
+        guard false == text.isEmpty else {
             isLoading = false
             searchText = nil
             loadTrends()
