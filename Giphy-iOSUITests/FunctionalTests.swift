@@ -10,6 +10,7 @@ class Tests: BaseTestCase {
             .scrollDown(nTimes: 4)
             .contentLoadingShouldComplete(WaitLimit.long)
             .contentIsFine()
+            .scrollToTopShouldWorks()
     }
 
 

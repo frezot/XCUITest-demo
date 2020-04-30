@@ -87,5 +87,24 @@ extension XCUIElement {
         return waitFor(condition: "exists == false OR (exists == true AND label != \"In progress\")", timeLimit)
     }
 
+    /// некоторые элементы с точки зрения XCUITest не нажимабельные,  workaround чтобы мочь тапнуть во что бы то ни стало
+    internal func hit() {
+        if self.isHittable {
+            self.tap()
+        } else {
+            let coordinate = self.coordinate(withNormalizedOffset: CGVector.zero)
+            coordinate.tap()
+        }
+    }
+
+    func scrollToTop() {
+        // https://www.alloc-init.com/blog/2019.08.08
+        if #available(iOS 13, *) {
+            let systemApp = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+            systemApp.statusBars.firstMatch.hit()
+        } else {
+            XCUIApplication().statusBars.firstMatch.tap()
+        }
+    }
 
 }

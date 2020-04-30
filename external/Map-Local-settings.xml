@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<?charles serialisation-version='2.0' ?>
+<mapLocal>
+  <toolEnabled>true</toolEnabled>
+  <mappings>
+    <mapLocalMapping>
+      <sourceLocation>
+        <protocol>https</protocol>
+        <host>api.giphy.com</host>
+        <path>/*</path>
+      </sourceLocation>
+      <dest>~/Desktop/mock/api.giphy.com</dest>
+      <enabled>true</enabled>
+      <caseSensitive>false</caseSensitive>
+    </mapLocalMapping>
+    <mapLocalMapping>
+      <sourceLocation>
+        <protocol>https</protocol>
+        <host>media0.giphy.com</host>
+        <path>/*</path>
+      </sourceLocation>
+      <dest>~/Desktop/mock/media0.giphy.com</dest>
+      <enabled>true</enabled>
+      <caseSensitive>false</caseSensitive>
+    </mapLocalMapping>
+  </mappings>
+</mapLocal>

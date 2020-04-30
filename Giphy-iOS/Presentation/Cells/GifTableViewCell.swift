@@ -128,8 +128,10 @@ final class GifTableViewCell: CommonInitTableViewCell {
             into: avatarImageView,
             completion: { [weak self] _ in
                 self?.avatarActivityIndicator.stopAnimating()
-                self?.avatarImageView.accessibilityIdentifier = "\(cellModel.userAvatarUrl?.relativePath.components(separatedBy: "/")[3] ?? "")"
-                // example: /avatars/warnerarchive/c8zg2LS9jiEj.gif → c8zg2LS9jiEj.gif
+
+                if nil != cellModel.userAvatarUrl {
+                    self?.avatarImageView.accessibilityIdentifier = "\(cellModel.userAvatarUrl?.relativePath ?? "")"
+                }
             }
         )
 

@@ -66,4 +66,25 @@ class MainScreen: AbstractScreen {
             return self
         }
     }
+
+    @discardableResult
+    func scrollToTopShouldWorks() -> Self {
+        return XCTContext.step("Делаем стандартный scrollToTop, убеждаемся что лента вернулась к первой записи") {
+
+            gifTable.scrollToTop()
+
+            let top = gifTable.cells["row0"]
+            expect(top.visible).to(beTrue(), description: "Сломался scrollToTop")
+
+            for image in top.images {
+                expect(image.identifier).notTo(equal(""), description:
+                    "У изображения остуствует идентификатор, скорее всего при загрузке возникла проблема")
+                expect(image.frame.height).to(beGreaterThan(20), description:
+                    "Проблемы с размером изображения. [\(image.frame.width)x\(image.frame.height)]")
+            }
+
+            return self
+        }
+    }
+
 }
