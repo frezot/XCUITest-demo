@@ -6,22 +6,55 @@
     <mapLocalMapping>
       <sourceLocation>
         <protocol>https</protocol>
-        <host>api.giphy.com</host>
+        <host>media0.giphy.com</host>
         <path>/*</path>
       </sourceLocation>
-      <dest>~/Desktop/mock/api.giphy.com</dest>
-      <enabled>true</enabled>
+      <dest>~/mock/media0.giphy.com</dest>
+      <enabled>false</enabled>
       <caseSensitive>false</caseSensitive>
     </mapLocalMapping>
     <mapLocalMapping>
       <sourceLocation>
         <protocol>https</protocol>
-        <host>media0.giphy.com</host>
-        <path>/*</path>
+        <host>api.giphy.com</host>
+        <path>/v1/gifs/trending</path>
       </sourceLocation>
-      <dest>~/Desktop/mock/media0.giphy.com</dest>
+      <dest>~/mock/api.giphy.com/v1/gifs/trending.json</dest>
       <enabled>true</enabled>
-      <caseSensitive>false</caseSensitive>
+      <caseSensitive>true</caseSensitive>
+    </mapLocalMapping>
+    <mapLocalMapping>
+      <sourceLocation>
+        <protocol>https</protocol>
+        <host>api.giphy.com</host>
+        <path>/v1/gifs/search</path>
+        <query>q=%2A</query>
+      </sourceLocation>
+      <dest>~/mock/api.giphy.com/v1/gifs/search_empty.json</dest>
+      <enabled>true</enabled>
+      <caseSensitive>true</caseSensitive>
+    </mapLocalMapping>
+    <mapLocalMapping>
+      <sourceLocation>
+        <protocol>https</protocol>
+        <host>api.giphy.com</host>
+        <path>/v1/gifs/search</path>
+        <query>q=Albus</query>
+      </sourceLocation>
+      <dest>~/mock/api.giphy.com/v1/gifs/search1.json</dest>
+      <enabled>true</enabled>
+      <caseSensitive>true</caseSensitive>
+    </mapLocalMapping>
+    <mapLocalMapping>
+      <sourceLocation>
+        <protocol>https</protocol>
+        <host>api.giphy.com</host>
+        <path>/v1/gifs/search</path>
+        <query>q=%E7%8B%AC%E8%A3%81%E8%80%85</query>
+      </sourceLocation>
+      <dest>~/mock/api.giphy.com/v1/gifs/search2.json</dest>
+      <enabled>true</enabled>
+      <caseSensitive>true</caseSensitive>
     </mapLocalMapping>
   </mappings>
 </mapLocal>
