@@ -18,7 +18,7 @@ class PerfomanceTests: XCTestCase {
 
     func testLaunchPerformance() {
 
-        XCTContext.info("Тест проверяет сколько секунд нужно приложения чтобы запуститься")
+        XCTContext.info("Тест проверяет сколько секунд нужно приложению чтобы запуститься")
 
         self.measure(metrics: [XCTClockMetric()]) {
             XCUIApplication().launch()

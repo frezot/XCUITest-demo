@@ -8,9 +8,9 @@
  - :white_check_mark: отображение ленты с непустым контентом
  - :white_check_mark: скролл и подгруз новых данных
  - :white_check_mark: scroll to top
- - :x: успешный поиск
- -  :white_check_mark:  очистка поискового запроса
- -  :white_check_mark:  неуспешный поиск
+ - :white_check_mark: успешный поиск
+ - :white_check_mark:  очистка поискового запроса
+ - :white_check_mark:  неуспешный поиск
  - :x: недоступность сервера
 
 #  Что не будет тестироваться

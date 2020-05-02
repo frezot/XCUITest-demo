@@ -14,13 +14,20 @@ class Tests: BaseTestCase {
             .scrollToTopShouldWorks()
     }
 
-    func testSearcWithoutResults() {
+    func testSearchWithoutResults() {
 
         start()
             .checkSearchBar(placeholder: "Search gif")
             .search(for: "*")
             .searchResultIsEmpty(failText: "No gifs")
             .clearSearchBar()
+    }
+
+    func testSearchWithResults() {
+
+        start()
+            .checkSearching(request: "独裁者", result: "l3XEYNJTJyC7m")
+            .checkSearching(request: "Albus", result: "TyM0y7hjIHcRO")
     }
 
 }

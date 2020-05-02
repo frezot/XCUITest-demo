@@ -52,6 +52,19 @@ class MainScreen: AbstractScreen {
     }
 
     @discardableResult
+    func topImageIs(_ imagename: String) -> Self {
+        return XCTContext.step("Ожидаем что изображение [\(imagename)] будет первым в таблице") {
+
+            let image = gifTable.cells[0].images[imagename]
+
+            expect(image.visible).to(beTrue(), description: "Картинка не отображается")
+            expect(image.frame.height).to(beGreaterThan(20), description:
+                "Проблемы с размером изображения. [\(image.frame.width)x\(image.frame.height)]")
+            return self
+        }
+    }
+
+    @discardableResult
     func clearSearchBar() -> Self {
         return XCTContext.step("Удаляем поисковой запрос кнопкой очистки") {
 
@@ -63,6 +76,15 @@ class MainScreen: AbstractScreen {
         }
     }
 
+    @discardableResult
+    func checkSearching(request: String, result: String) -> Self {
+        return XCTContext.step("По запросу '\(request)' ожидаем что найдет изображение [\(result)]") {
+            return self.search(for: request)
+                       .waitForFirstResponse(WaitLimit.short)
+                       .topImageIs(result)
+                       .clearSearchBar()
+        }
+    }
 
     @discardableResult
     func waitForFirstResponse(_ timelimit: TimeInterval) -> Self {
@@ -75,7 +97,6 @@ class MainScreen: AbstractScreen {
         }
     }
 
-
     @discardableResult
     func scrollDown(nTimes n: Int) -> Self {
         return XCTContext.step("Скролим ленту \(n) раз(а)") {
@@ -85,7 +106,6 @@ class MainScreen: AbstractScreen {
             return self
         }
     }
-
 
     @discardableResult
     func contentLoadingShouldComplete(_ timelimit: TimeInterval) -> Self {

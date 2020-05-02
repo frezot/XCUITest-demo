@@ -6,7 +6,11 @@ extension XCUIElement {
     internal func writeText(_ text: String) {
         expect(self.waitForExistence(timeout: 3)).to(beTrue(), description: "Поле ввода [\(self.identifier)] не найдено")
         self.tap()
-        self.typeText(text)
+
+        text.forEach({ // имитируем побуквенный ввод пользователем
+            self.typeText("\($0)")
+        })
+
         guard let typedText = self.value as? String else {
             fail("Что-то пошло не так: в текстовом поле не String value")
             return
