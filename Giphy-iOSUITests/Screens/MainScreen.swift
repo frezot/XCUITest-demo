@@ -9,7 +9,59 @@ class MainScreen: AbstractScreen {
         return gifTable
     }
 
-    private var gifTable: XCUIElement { app.tables["gifTableView"] }
+    private lazy var gifTable = app.tables["gifTableView"]
+    private lazy var searchBar = app.otherElements["searchBar"]
+    private lazy var noResultsView = app.otherElements["noResultsView"]
+
+    @discardableResult
+    func screenHeaderIs(_ expectation: String) -> Self {
+        return XCTContext.step("Проверяем заголовок экрана") {
+            expect(self.app.staticTexts["screenHeader"].label).to(equal(expectation))
+            return self
+        }
+    }
+
+    @discardableResult
+    func checkSearchBar(placeholder: String) -> Self {
+        return XCTContext.step("Првоеряем видимость и корректность SearchBar-элементов") {
+            expect(self.searchBar.visible).to(beTrue(), description: "SearchBar отсутсвует или не виден")
+            expect(self.searchBar.searchFields.element.placeholderValue).to(equal(placeholder), description: "Рlaceholder поисковой строки")
+            return self
+        }
+    }
+
+    @discardableResult
+    func search(for query: String) -> Self {
+        return XCTContext.step("В качестве поискового запроса вводим: \"\(query)\"") {
+            searchBar.searchFields.element.writeText(query)
+            expect(self.searchBar.buttons["Clear text"].visible).to(beTrue(), description: "При не-пустой поисковой строке должен отображаться 'крестик' очистки")
+            return self
+        }
+    }
+
+    @discardableResult
+    func searchResultIsEmpty(failText: String) -> Self {
+        return XCTContext.step("Проверяем как отображается '\(failText)'-вьюха") {
+
+            expect(self.noResultsView.isHittable).to(beTrue())
+            expect(self.gifTable.isHittable).to(beFalse()) // через isHittable проверяем что одна вьюха лежит поверх другой
+
+            expect(self.app.staticTexts["noResultsViewTitle"].label).to(equal(failText))
+            return self
+        }
+    }
+
+    @discardableResult
+    func clearSearchBar() -> Self {
+        return XCTContext.step("Удаляем поисковой запрос кнопкой очистки") {
+
+            self.searchBar.buttons["Clear text"].tap()
+
+            expect(self.noResultsView.waitForHide()).to(beTrue(), description: "После очистки результатов поиска не может отображаться noResultsView")
+            expect(self.gifTable.isHittable).to(beTrue(), description: "На первый план должна выйти gifTable")
+            return self
+        }
+    }
 
 
     @discardableResult
