@@ -30,4 +30,12 @@ class Tests: BaseTestCase {
             .checkSearching(request: "Albus", result: "TyM0y7hjIHcRO")
     }
 
+    func testNetworkUnreachable() {
+
+        XCTContext.info("для прохождения теста необходимо спровоцировать обрыв соединения, например через block-list в proxy")
+
+        start()
+            .checkErrorView(failText: "Something went wrong :(")
+    }
+
 }

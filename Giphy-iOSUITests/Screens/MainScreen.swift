@@ -12,6 +12,7 @@ class MainScreen: AbstractScreen {
     private lazy var gifTable = app.tables["gifTableView"]
     private lazy var searchBar = app.otherElements["searchBar"]
     private lazy var noResultsView = app.otherElements["noResultsView"]
+    private lazy var errorView = app.otherElements["errorView"]
 
     @discardableResult
     func screenHeaderIs(_ expectation: String) -> Self {
@@ -47,6 +48,21 @@ class MainScreen: AbstractScreen {
             expect(self.gifTable.isHittable).to(beFalse()) // через isHittable проверяем что одна вьюха лежит поверх другой
 
             expect(self.app.staticTexts["noResultsViewTitle"].label).to(equal(failText))
+            return self
+        }
+    }
+
+
+    @discardableResult
+    func checkErrorView(failText: String) -> Self {
+        return XCTContext.step("Проверяем как отображается '\(failText)' ошибка") {
+
+            expect(self.errorView.visible).to(beTrue())
+
+            expect(self.app.staticTexts["errorViewTitle"].label).to(equal(failText))
+            let button = app.buttons["errorViewButton"]
+            expect(button.label).to(equal("Refresh"))
+            expect(button.isHittable).to(beTrue(), description: "Кнопка не isHittable")
             return self
         }
     }
